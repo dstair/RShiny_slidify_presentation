@@ -51,7 +51,7 @@ head(MSFT[1:5,1:4])
     + 1-line aggregation by time period (i.e., week, month, year)
     + Calculate rate of return
 
-##### The <code>weeklyReturn</code> commmand is behind the following chart:
+##### The <code>weeklyReturn</code> commmand drives the following chart:
     
 <div style='text-align: center;'>
     <img height='250' src='./assets/img/StockTracker_returns.png' />
@@ -69,3 +69,4 @@ head(MSFT[1:5,1:4])
     <img height='200' src='./assets/img/StockTracker_graph.png' />
 </div>
 
+5. Some googling reveals root causes - earning reports were released that week. AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.
