@@ -100,8 +100,8 @@ The above pull returns the following time series (xts) object (the below data is
     <h5>The time series object returned by <code>quantmod</code> :</h5>
 
 <ol>
-<li>It&#39;s indexed by date, so jumping to a date range is fast. Dygraphs uses this indexing.</li>
-<li>For example, the <code>weeklyReturn</code> executes the following 2 steps:
+<li>It&#39;s indexed by date, so jumping to a date range is fast. Dygraphs takes advantge of this indexing for fast interactive charting.</li>
+<li>There are powerful time-related functions. For example, the <code>weeklyReturn</code> executes the following 2 steps:
 
 <ul>
 <li>1-line aggregation by time period (i.e., week, month, year)</li>
@@ -128,8 +128,8 @@ The above pull returns the following time series (xts) object (the below data is
 <li>View the shinyapps.io site with default values: tickers &quot;AMZN&quot; and &quot;MSFT&quot;, dates &quot;2015-01-02&quot; to &quot;2015-11-20.&quot;</li>
 <li>Note large swings in the price of each stock at the end of January 2015.</li>
 <li>Zoom in on this time period, using the slider at the bottom of either chart.</li>
-<li>Hovering over the chart, we see exact prices and dates. We can discern that MSFT dropped from 47.01 to 40.4 in the same 4-day span that AMZN rose from 309.56 to 354.53.</li>
-<li>Some googling reveals root causes - that week, AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.</li>
+<li>Hovering over the chart, we see exact prices and dates. We can discern that MSFT dropped from 47.01 to 40.4 in the same 4-day span that AMZN rose from 309.56 to 354.53. Some googling reveals root causes - that week, AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.</li>
+<li>Explore more stock price data on your own!</li>
 </ol>
 
 <div style='text-align: center;'>
