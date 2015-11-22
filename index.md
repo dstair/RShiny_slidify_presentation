@@ -36,7 +36,7 @@ getSymbols(c('MSFT'),src='yahoo')
 ```
 
 </br>
-The above pull returns the following time series (xts) object:
+The above pull returns the following time series (xts) object (the below data is pulled when this document is slidified):
 
 
 ```

@@ -35,7 +35,7 @@ getSymbols(c('MSFT'),src='yahoo')
 ```
 
 </br>
-The above pull returns the following time series (xts) object:
+The above pull returns the following time series (xts) object (the below data is pulled when this document is slidified):
 
 ```{r, echo=FALSE, results='show'}
 head(MSFT[1:5,1:4])
