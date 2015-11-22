@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chart Stock Prices and Returns</title>
+  <title>Charting Stock Prices and Returns</title>
   <meta charset="utf-8">
-  <meta name="description" content="Chart Stock Prices and Returns">
+  <meta name="description" content="Charting Stock Prices and Returns">
   <meta name="author" content="Daniel Stair">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Chart Stock Prices and Returns</h1>
+    <h1>Charting Stock Prices and Returns</h1>
     <h2>Using Shiny and Dygraphs</h2>
     <p>Daniel Stair<br/>Software Engineer</p>
   </hgroup>
@@ -43,14 +43,24 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Project Overview</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
+    <h3>Purpose:</h3>
+
+<p>Interactively explore historical prices and returns of two user defined stocks</p>
+
+<h3>Steps:</h3>
+
+<ol>
+<li>Pull stocks from Yahoo finance</li>
+<li>Use dygraphs to visualize output</li>
+<li>Explore / analyze charts in an interactive fashion</li>
 </ol>
+
+<h3>Product:</h3>
+
+<p>This product is live at <a href="https://dstair.shinyapps.io/shiny_course_project">https://dstair.shinyapps.io/shiny_course_project</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -58,22 +68,24 @@
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Lets see if I can use knitr...</h2>
+    <h2>Step 1: Pulling stock data from Yahoo! Finance</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">sum(1:10)
+    <p>The library <code> quantmod </code> is used to pull stock data from Yahoo! Finance. A basic pull is as follows:</p>
+
+<pre><code class="r">library(quantmod)
+getSymbols(c(&#39;MSFT&#39;),src=&#39;yahoo&#39;)
 </code></pre>
 
-<pre><code>## [1] 55
-</code></pre>
+<p></br>
+The above pull returns the following time series (xts) object:</p>
 
-<pre><code class="r">10 * 11 / 2
-</code></pre>
-
-<pre><code>## [1] 55
-</code></pre>
-
-<pre><code>1 + 1
+<pre><code>##            MSFT.Open MSFT.High MSFT.Low MSFT.Close
+## 2007-01-03     29.91     30.25    29.40      29.86
+## 2007-01-04     29.70     29.97    29.44      29.81
+## 2007-01-05     29.63     29.75    29.45      29.64
+## 2007-01-08     29.65     30.10    29.53      29.93
+## 2007-01-09     30.00     30.18    29.73      29.96
 </code></pre>
 
   </article>
@@ -81,8 +93,48 @@
 </slide>
 
 <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Step 2: Powerful graphing of time series objects</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <h3>The time series object returned by <code>quantmod</code> is great to work with</h3>
+
+<ol>
+<li>It&#39;s indexed by date, so jumping to a date range is fast</li>
+<li>It&#39;s very easy to do the following with 1 command, <code>weeklyReturn</code>:
+
+<ul>
+<li>1-line aggregation by time period (i.e., week, month, year)</li>
+<li>Calculate rate of return</li>
+</ul></li>
+</ol>
+
+<h5>The <code>weeklyReturn</code> commmand is behind the following chart:</h5>
+
+<div style='text-align: center;'>
+    <img height='250' src='./assets/img/StockTracker_returns.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Step 3: An example analysis of two stocks</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>View the shinyapps.io site with default values: tickers &quot;AMZN&quot; and &quot;MSFT&quot;, dates &quot;2015-01-02&quot; to &quot;2015-11-20&quot;</li>
+<li>Note a large shift at the end of January 2015</li>
+<li>Zoom in on this time period, using the slider at the bottom of either chart</li>
+<li>Hovering over the chart, we see exact prices and dates. We can discern that MSFT dropped from 47.01 to 40.4 in the same 4-day span that AMZN rose from 309.56 to 354.53.</li>
+</ol>
+
+<div style='text-align: left;'>
+    <img height='200' src='./assets/img/StockTracker_graph.png' />
+</div>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -93,20 +145,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Project Overview'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Lets see if I can use knitr...'>
+        data-slide=2 title='Step 1: Pulling stock data from Yahoo! Finance'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='NA'>
+        data-slide=3 title='Step 2: Powerful graphing of time series objects'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Step 3: An example analysis of two stocks'>
+         4
       </a>
     </li>
   </ul>

@@ -1,1 +1,13 @@
 base
+shiny
+zoo
+xts
+TTR
+quantmod
+dygraphs
+plyr
+magrittr
+shinyapps
+rsconnect
+slidify
+PerformanceAnalytics
