@@ -51,14 +51,14 @@ The above pull returns the following time series (xts) object:
 ---
 ## Step 2: Powerful graphing of time series objects
 
-### The time series object returned by <code>quantmod</code> is great to work with
+##### The time series object returned by <code>quantmod</code> is great to work with:
 
 1. It's indexed by date, so jumping to a date range is fast
-2. It's very easy to do the following with 1 command, <code>weeklyReturn</code>:
+2. It's very easy to do the following 2 steps with 1 command, <code>weeklyReturn</code>:
     + 1-line aggregation by time period (i.e., week, month, year)
-    + Calculate rate of return
+    + Calculate rate of return for that time period
 
-##### The <code>weeklyReturn</code> commmand is behind the following chart:
+##### The <code>weeklyReturn</code> commmand drives the following chart:
     
 <div style='text-align: center;'>
     <img height='250' src='./assets/img/StockTracker_returns.png' />
@@ -71,8 +71,10 @@ The above pull returns the following time series (xts) object:
 2. Note a large shift at the end of January 2015
 3. Zoom in on this time period, using the slider at the bottom of either chart
 4. Hovering over the chart, we see exact prices and dates. We can discern that MSFT dropped from 47.01 to 40.4 in the same 4-day span that AMZN rose from 309.56 to 354.53.
+5. Some googling reveals root causes - earning reports were released that week. AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.
 
-<div style='text-align: left;'>
-    <img height='200' src='./assets/img/StockTracker_graph.png' />
+<div style='text-align: center;'>
+    <img height='220' src='./assets/img/StockTracker_graph.png' />
 </div>
+</br>
 

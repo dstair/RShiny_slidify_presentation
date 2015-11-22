@@ -97,19 +97,19 @@ The above pull returns the following time series (xts) object:</p>
     <h2>Step 2: Powerful graphing of time series objects</h2>
   </hgroup>
   <article data-timings="">
-    <h3>The time series object returned by <code>quantmod</code> is great to work with</h3>
+    <h5>The time series object returned by <code>quantmod</code> is great to work with:</h5>
 
 <ol>
 <li>It&#39;s indexed by date, so jumping to a date range is fast</li>
-<li>It&#39;s very easy to do the following with 1 command, <code>weeklyReturn</code>:
+<li>It&#39;s very easy to do the following 2 steps with 1 command, <code>weeklyReturn</code>:
 
 <ul>
 <li>1-line aggregation by time period (i.e., week, month, year)</li>
-<li>Calculate rate of return</li>
+<li>Calculate rate of return for that time period</li>
 </ul></li>
 </ol>
 
-<h5>The <code>weeklyReturn</code> commmand is behind the following chart:</h5>
+<h5>The <code>weeklyReturn</code> commmand drives the following chart:</h5>
 
 <div style='text-align: center;'>
     <img height='250' src='./assets/img/StockTracker_returns.png' />
@@ -129,11 +129,14 @@ The above pull returns the following time series (xts) object:</p>
 <li>Note a large shift at the end of January 2015</li>
 <li>Zoom in on this time period, using the slider at the bottom of either chart</li>
 <li>Hovering over the chart, we see exact prices and dates. We can discern that MSFT dropped from 47.01 to 40.4 in the same 4-day span that AMZN rose from 309.56 to 354.53.</li>
+<li>Some googling reveals root causes - earning reports were released that week. AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.</li>
 </ol>
 
-<div style='text-align: left;'>
-    <img height='200' src='./assets/img/StockTracker_graph.png' />
+<div style='text-align: center;'>
+    <img height='220' src='./assets/img/StockTracker_graph.png' />
 </div>
+
+<p></br></p>
 
   </article>
   <!-- Presenter Notes -->
