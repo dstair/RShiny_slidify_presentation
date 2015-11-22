@@ -34,7 +34,7 @@
   <hgroup class="auto-fadein">
     <h1>Charting Stock Prices and Returns</h1>
     <h2>Using Shiny and Dygraphs</h2>
-    <p>Daniel Stair<br/>Software Engineer</p>
+    <p>Daniel Stair<br/>Coursera Student</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -48,7 +48,7 @@
   <article data-timings="">
     <h3>Purpose:</h3>
 
-<p>Interactively explore historical prices and returns of two user defined stocks</p>
+<p>Interactively explore the historical prices and returns of two user defined stocks</p>
 
 <h3>Steps:</h3>
 
@@ -97,11 +97,11 @@ The above pull returns the following time series (xts) object (the below data is
     <h2>Step 2: Powerful graphing of time series objects</h2>
   </hgroup>
   <article data-timings="">
-    <h5>The time series object returned by <code>quantmod</code> is great to work with:</h5>
+    <h5>The time series object returned by <code>quantmod</code> :</h5>
 
 <ol>
-<li>It&#39;s indexed by date, so jumping to a date range is fast</li>
-<li>It&#39;s very easy to do the following 2 steps with 1 command, <code>weeklyReturn</code>:
+<li>It&#39;s indexed by date, so jumping to a date range is fast. Dygraphs uses this indexing.</li>
+<li>For example, the <code>weeklyReturn</code> executes the following 2 steps:
 
 <ul>
 <li>1-line aggregation by time period (i.e., week, month, year)</li>
@@ -109,7 +109,7 @@ The above pull returns the following time series (xts) object (the below data is
 </ul></li>
 </ol>
 
-<h5>The <code>weeklyReturn</code> commmand drives the following chart:</h5>
+<h5>The <code>weeklyReturn</code> commmand drives this graph of rates of return:</h5>
 
 <div style='text-align: center;'>
     <img height='250' src='./assets/img/StockTracker_returns.png' />
@@ -125,11 +125,11 @@ The above pull returns the following time series (xts) object (the below data is
   </hgroup>
   <article data-timings="">
     <ol>
-<li>View the shinyapps.io site with default values: tickers &quot;AMZN&quot; and &quot;MSFT&quot;, dates &quot;2015-01-02&quot; to &quot;2015-11-20&quot;</li>
-<li>Note a large shift at the end of January 2015</li>
-<li>Zoom in on this time period, using the slider at the bottom of either chart</li>
+<li>View the shinyapps.io site with default values: tickers &quot;AMZN&quot; and &quot;MSFT&quot;, dates &quot;2015-01-02&quot; to &quot;2015-11-20.&quot;</li>
+<li>Note large swings in the price of each stock at the end of January 2015.</li>
+<li>Zoom in on this time period, using the slider at the bottom of either chart.</li>
 <li>Hovering over the chart, we see exact prices and dates. We can discern that MSFT dropped from 47.01 to 40.4 in the same 4-day span that AMZN rose from 309.56 to 354.53.</li>
-<li>Some googling reveals root causes - earning reports were released that week. AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.</li>
+<li>Some googling reveals root causes - that week, AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.</li>
 </ol>
 
 <div style='text-align: center;'>

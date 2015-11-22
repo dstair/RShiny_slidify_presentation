@@ -3,7 +3,7 @@ title       : Charting Stock Prices and Returns
 subtitle    : Using Shiny and Dygraphs
 author      : Daniel Stair
 date        : November 2015
-job         : Software Engineer
+job         : Coursera Student
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -14,7 +14,7 @@ knit        : slidify::knit2slides
 ## Project Overview
 
 ### Purpose:
-Interactively explore historical prices and returns of two user defined stocks
+Interactively explore the historical prices and returns of two user defined stocks
 
 ### Steps:
 1. Pull stocks from Yahoo finance
@@ -51,14 +51,14 @@ The above pull returns the following time series (xts) object (the below data is
 ---
 ## Step 2: Powerful graphing of time series objects
 
-##### The time series object returned by <code>quantmod</code> is great to work with:
+##### The time series object returned by <code>quantmod</code> :
 
-1. It's indexed by date, so jumping to a date range is fast
-2. It's very easy to do the following 2 steps with 1 command, <code>weeklyReturn</code>:
+1. It's indexed by date, so jumping to a date range is fast. Dygraphs uses this indexing.
+2. For example, the <code>weeklyReturn</code> executes the following 2 steps:
     + 1-line aggregation by time period (i.e., week, month, year)
     + Calculate rate of return for that time period
 
-##### The <code>weeklyReturn</code> commmand drives the following chart:
+##### The <code>weeklyReturn</code> commmand drives this graph of rates of return:
     
 <div style='text-align: center;'>
     <img height='250' src='./assets/img/StockTracker_returns.png' />
@@ -67,11 +67,11 @@ The above pull returns the following time series (xts) object (the below data is
 ---
 ## Step 3: An example analysis of two stocks
 
-1. View the shinyapps.io site with default values: tickers "AMZN" and "MSFT", dates "2015-01-02" to "2015-11-20"
-2. Note a large shift at the end of January 2015
-3. Zoom in on this time period, using the slider at the bottom of either chart
+1. View the shinyapps.io site with default values: tickers "AMZN" and "MSFT", dates "2015-01-02" to "2015-11-20."
+2. Note large swings in the price of each stock at the end of January 2015.
+3. Zoom in on this time period, using the slider at the bottom of either chart.
 4. Hovering over the chart, we see exact prices and dates. We can discern that MSFT dropped from 47.01 to 40.4 in the same 4-day span that AMZN rose from 309.56 to 354.53.
-5. Some googling reveals root causes - earning reports were released that week. AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.
+5. Some googling reveals root causes - that week, AMZN jumped on strong earnings, while MSFT fell on declining Windows revenues, and despite strong earnings.
 
 <div style='text-align: center;'>
     <img height='220' src='./assets/img/StockTracker_graph.png' />
